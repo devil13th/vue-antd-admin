@@ -2,13 +2,16 @@ import TabsView from '@/layouts/tabs/TabsView'
 import BlankView from '@/layouts/BlankView'
 import PageView from '@/layouts/PageView'
 
+ 
+import loginComponent from '@/pages/login'
 // 路由配置
 const options = {
   routes: [
     {
       path: '/login',
       name: '登录页',
-      component: () => import('@/pages/login')
+      // component: () => import('@/pages/login')
+      component: loginComponent
     },
     {
       path: '*',
@@ -216,7 +219,32 @@ const options = {
             }
           },
           component: () => import('@/pages/form/basic')
-        }
+        },
+        {
+          path: 'vueEdu',
+          name: 'Vue Edu',
+          meta: {
+            icon: 'form',
+          },
+          component: PageView,
+          children: [
+            {
+              path: 'slot',
+              name: '插槽 Slot',
+              component: () => import('@/pages/vueEdu/slot/SlotTest'),
+            },
+            {
+              path: 'transation',
+              name: '动画',
+              component: () => import('@/pages/vueEdu/transation/Transation'),
+            },
+            {
+              path: 'advance',
+              name: '高级表单',
+              component: () => import('@/pages/form/advance'),
+            }
+          ]
+        },
       ]
     },
   ]

@@ -6,7 +6,7 @@
           <a-tooltip :title="$t('introduce')" slot="action">
             <a-icon type="info-circle-o" />
           </a-tooltip>
-          <div>
+          <div> 
             <trend style="margin-right: 16px" :term="$t('wow')" :percent="12" :is-increase="true" :scale="0" />
             <trend :term="$t('dod')" :target="100" :value="89" :scale="0" />
           </div>
