@@ -2,21 +2,18 @@
   <div class="main">
     <div class="header">
       <h5>Header</h5>
-      <slot name="headerSlot" :headerData="parentHeaderData"></slot>
+      <slot name="headerSlot" :headerData="a"></slot>
     </div>
 
     <div class="content">
       <h5>Content</h5>
-      <slot
-        name="contentSlot"
-        :contentData="parentContentData"
-        :user="userInfo"
-      ></slot>
+
+      <slot name="contentSlot" :contentData="b" :user="userInfo"></slot>
     </div>
 
     <div class="footer">
       <h5>Footer</h5>
-      <slot name="footerSlot" :footerData="parentFooterData"></slot>
+      <slot name="footerSlot" :footerData="parentFooterData" :cb="cb"></slot>
     </div>
   </div>
 </template>
@@ -29,17 +26,24 @@ export default {
         firstName: 'thd',
         lastName: 'devil13ths',
       },
-      parentHeaderData: {
+      a: {
         title: 'This Is A Slot Example',
       },
-      parentContentData: {
+      b: {
         title: 'Devil13th',
         content: "I'm A Student ,Nice To Meet You",
       },
-      ParentfooterData: {
+      parentFooterData: {
         copyRight: 'CopyRight ...',
       },
     }
+  },
+  methods: {
+    cb: function(x) {
+      alert(
+        "I'm a callback function:" + this.parentFooterData.copyRight + ',' + x
+      )
+    },
   },
 }
 </script>

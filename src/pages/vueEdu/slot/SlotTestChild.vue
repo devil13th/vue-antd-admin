@@ -1,6 +1,8 @@
 <template>
   <div style="border:1px solid pink;padding:8px;">
     <div style="padding:8px;">{{ str }}</div>
+
+    <a-button v-if="cb" @click="cb">Cb</a-button>
     <hr />
     slot-scope : {{ text }}
   </div>
@@ -12,6 +14,12 @@ export default {
       type: Object,
       default: function() {
         return {}
+      },
+    },
+    cb: {
+      type: Function,
+      default: function() {
+        return () => {}
       },
     },
   },

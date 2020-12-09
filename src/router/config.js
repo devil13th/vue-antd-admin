@@ -239,9 +239,19 @@ const options = {
               component: () => import('@/pages/vueEdu/transation/Transation'),
             },
             {
-              path: 'advance',
-              name: '高级表单',
-              component: () => import('@/pages/form/advance'),
+              path: 'v-pre v-cloak',
+              name: 'v-pre v-cloak',
+              component: () => import('@/pages/vueEdu/v-pre/VPre'),
+            },
+            {
+              path: 'Attrs',
+              name: 'Attrs',
+              component: () => import('@/pages/vueEdu/attrs/Attrs'),
+            },
+            {
+              path: 'JSX',
+              name: 'jsx',
+              component: () => import('@/pages/vueEdu/jsx/Jsx'),
             }
           ]
         },
