@@ -90,6 +90,12 @@ export default {
       form: this.$form.createForm(this)
     }
   },
+  mounted(){
+    this.form.setFieldsValue({
+      name:'admin',
+      password:'888888'
+    })
+  },
   computed: {
     systemName () {
       return this.$store.state.setting.systemName
