@@ -10,7 +10,7 @@
         <slot-test-child :text="slotProps" :cb="showFn"></slot-test-child>
       </template>
       <!-- v-slot 也可以用 # 符号代替 -->
-      <template v-slot:footerSlot="slotProps">
+      <template #footerSlot="slotProps">
         <slot-test-child
           :text="slotProps"
           :cb="slotProps.cb"
